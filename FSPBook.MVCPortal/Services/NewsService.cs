@@ -20,7 +20,8 @@ public class NewsService : INewsService
     {
         try
         {
-            var apiUrl = $"https://api.thenewsapi.com/v1/news/top?api_token={_apiKey}&locale=us&categories=tech&limt={count}";
+            // Top endpoint has been used - Headlines is not supported on Free Plan
+            var apiUrl = $"https://api.thenewsapi.com/v1/news/top?api_token={_apiKey}&locale=in&categories=tech&limt={count}";
 
             if (sources != null && sources.Any())
             {
@@ -35,7 +36,7 @@ public class NewsService : INewsService
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error fetching news from newsapi.");
-            return new NewsResponse();
+            return new NewsResponse { Data = new List<NewsArticle>() };
         }
     }
 }
