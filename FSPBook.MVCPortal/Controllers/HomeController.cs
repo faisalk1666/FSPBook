@@ -1,5 +1,6 @@
 ﻿using FSPBook.Data;
 using FSPBook.MVCPortal.Models;
+using FSPBook.MVCPortal.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
@@ -25,7 +26,7 @@ namespace FSPBook.MVCPortal.Controllers
                 var totalPosts = await postsQuery.CountAsync();
                 var posts = await postsQuery.Skip(skip).Take(take).ToListAsync();
 
-                var model = new PostViewModel
+                var model = new HomeViewModel
                 {
                     Posts = posts,
                     Skip = skip + take,
@@ -49,7 +50,7 @@ namespace FSPBook.MVCPortal.Controllers
                 var totalPosts = await postsQuery.CountAsync();
                 var posts = await postsQuery.Skip(skip).Take(take).ToListAsync();
 
-                var model = new PostViewModel
+                var model = new HomeViewModel
                 {
                     Posts = posts,
                     Skip = skip + take,

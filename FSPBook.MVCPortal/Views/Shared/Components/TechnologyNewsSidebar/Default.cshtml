@@ -1,0 +1,29 @@
+﻿@model FSPBook.MVCPortal.Models.NewsResponse
+
+<div class="news-sidebar">
+    <h5 class="sidebar-title">Technology News</h5>
+    <div class="news-list">
+        @if (Model.Data?.Any() ?? false)
+        {
+            @foreach (var article in Model.Data)
+            {
+                <div class="news-item card mb-3 shadow-sm">
+                    <div class="card-body">
+                        <h6 class="news-title mb-2">
+                            <a href="@article.Url" target="_blank">
+                                @article.Title
+                            </a>
+                        </h6>
+                        <p class="news-meta text-muted small mb-0">
+                            <i class="bi bi-calendar"></i> Published: @article.PublishedAt.ToString("MMMM dd, yyyy")
+                        </p>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p class="text-muted">No news articles available at the moment.</p>
+        }
+    </div>
+</div>

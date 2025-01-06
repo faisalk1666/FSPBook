@@ -2,7 +2,7 @@
 
 namespace FSPBook.MVCPortal.Models
 {
-    public class PostViewModel
+    public class HomeViewModel
     {
         public List<Post> Posts { get; set; }
         public int Skip { get; set; }

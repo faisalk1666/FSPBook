@@ -1,17 +1,14 @@
 using FSPBook.Data;
+using FSPBook.MVCPortal.Services;
 using FSPBook.MVCPortal.Utilities;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
 builder.Services.AddDbContext<Context>(options => options.UseInMemoryDatabase("FSPBookDataBase"));
-builder.Services.AddControllersWithViews(); // Use MVC controllers with views
+builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient<INewsService, NewsService>();
 
 var app = builder.Build();
 

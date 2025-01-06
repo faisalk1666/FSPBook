@@ -29,14 +29,13 @@
             </div>
         </nav>
     </header>
-    <div class="d-flex">
-        <aside class="sidebar p-3">
-            <ul class="list-unstyled">
-                <li><a href="#" class="text-dark text-decoration-none">Feed</a></li>
-                <li><a href="#" class="text-dark text-decoration-none">Messages</a></li>
-                <li><a href="#" class="text-dark text-decoration-none">Groups</a></li>
-            </ul>
+    <div class="d-flex flex-column flex-lg-row">
+        <!-- Sidebar -->
+        <aside class="sidebar p-3 bg-light flex-shrink-0" id="sidebar">
+            @await Component.InvokeAsync("TechnologyNewsSidebar")
         </aside>
+
+        <!-- Main Content -->
         <div class="content-container flex-grow-1">
             <main role="main" class="pb-3">
                 @RenderBody()

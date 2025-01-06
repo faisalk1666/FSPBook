@@ -38,7 +38,7 @@ namespace FSPBook.Tests
                 var result = await controller.Index(skip: 0, take: 10);
 
                 var viewResult = Assert.IsType<ViewResult>(result);
-                var model = Assert.IsAssignableFrom<PostViewModel>(viewResult.Model);
+                var model = Assert.IsAssignableFrom<HomeViewModel>(viewResult.Model);
                 Assert.Equal(2, model.Posts.Count);
                 Assert.Equal(2, model.TotalPosts);
             }
@@ -68,7 +68,7 @@ namespace FSPBook.Tests
                 var result = await controller.Index(skip: 0, take: 5);
 
                 var viewResult = Assert.IsType<ViewResult>(result);
-                var model = Assert.IsAssignableFrom<PostViewModel>(viewResult.Model);
+                var model = Assert.IsAssignableFrom<HomeViewModel>(viewResult.Model);
                 Assert.Equal(5, model.Posts.Count);
                 Assert.True(model.Posts.Count < model.TotalPosts);
             }
@@ -83,7 +83,7 @@ namespace FSPBook.Tests
                 var result = await controller.Index(skip: 0, take: 5);
 
                 var viewResult = Assert.IsType<ViewResult>(result);
-                var model = Assert.IsAssignableFrom<PostViewModel>(viewResult.Model);
+                var model = Assert.IsAssignableFrom<HomeViewModel>(viewResult.Model);
                 Assert.Empty(model.Posts);
             }
         }
