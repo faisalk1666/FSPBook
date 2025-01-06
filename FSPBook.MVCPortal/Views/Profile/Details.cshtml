@@ -1,0 +1,34 @@
+﻿@model FSPBook.MVCPortal.Models.ProfileViewModel
+
+@{
+    ViewData["Title"] = "Profile Page";
+}
+
+<div class="container mt-4">
+    <div class="profile-page">
+        <div class="text-center mb-4">
+            <h1 class="display-4">@Model.Name</h1>
+            <h3 class="text-primary">@Model.JobTitle</h3>
+        </div>
+
+        <h2 class="mb-3">Recent Posts</h2>
+        @if (Model.Posts != null && Model.Posts.Any())
+        {
+            <div class="list-group">
+                @foreach (var post in Model.Posts)
+                {
+                    <div class="list-group-item mb-3">
+                        <p>@post.Content</p>
+                        <small class="text-muted">Posted on @post.DateTimePosted.ToString("MMM dd, yyyy hh:mm tt")</small>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-info" role="alert">
+                No posts to display.
+            </div>
+        }
+    </div>
+</div>
