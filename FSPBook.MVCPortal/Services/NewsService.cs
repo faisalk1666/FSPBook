@@ -21,7 +21,7 @@ public class NewsService : INewsService
         try
         {
             // Top endpoint has been used - Headlines is not supported on Free Plan
-            var apiUrl = $"https://api.thenewsapi.com/v1/news/top?api_token={_apiKey}&locale=in&categories=tech&limt={count}";
+            var apiUrl = $"https://api.thenewsapi.com/v1/news/top?api_token={_apiKey}&locale=in&categories=tech&limit={count}";
 
             if (sources != null && sources.Any())
             {
