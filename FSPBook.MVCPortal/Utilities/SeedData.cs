@@ -24,7 +24,8 @@ internal static class SeedData
                     new Profile { Id = 4, FirstName = "Jack", LastName = "Simpson", JobTitle = "Engagement Officer" },
                     new Profile { Id = 5, FirstName = "Sadie", LastName = "Williams", JobTitle = "Finance Director" },
                     new Profile { Id = 6, FirstName = "Pete", LastName = "Jackson", JobTitle = "Developer" },
-                    new Profile { Id = 7, FirstName = "Sinead", LastName = "O'Leary", JobTitle = "Consultant" }
+                    new Profile { Id = 7, FirstName = "Sinead", LastName = "O'Leary", JobTitle = "Consultant" },
+                    new Profile { Id = 8, FirstName = "Faisal", LastName = "Khan", JobTitle = "Software Engineer" }
                 };
                 context.Profile.AddRange(profiles);
 
